@@ -1,0 +1,31 @@
+# 源代码和开发文件
+node_modules/
+.git/
+.github/
+.vscode/
+.idea/
+*.log
+*.md
+!README.md
+.gitignore
+.npmrc
+.babelrc
+.eslintrc
+.prettierrc
+webpack.config.js
+
+# 测试文件
+test/
+tests/
+__tests__/
+coverage/
+.nyc_output/
+
+# 开发环境配置
+.env.development
+.env.local
+.env.test
+
+# 其他不需要的文件
+.DS_Store
+Thumbs.db
