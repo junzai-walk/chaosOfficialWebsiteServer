@@ -51,6 +51,7 @@ npm install
 ```
 PORT=5000
 NODE_ENV=development
+TZ=Asia/Shanghai
 
 # MySQL数据库配置
 DB_HOST=localhost

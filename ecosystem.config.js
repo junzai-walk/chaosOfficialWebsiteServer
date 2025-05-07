@@ -13,7 +13,8 @@ module.exports = {
       DB_PORT: 3306,
       DB_NAME: 'chaos_website',
       DB_USER: 'chaos_user',
-      DB_PASSWORD: 'your_secure_password'
+      DB_PASSWORD: 'your_secure_password',
+      TZ: 'Asia/Shanghai' // 设置Node.js应用的时区为中国标准时间
     }
   }]
 };

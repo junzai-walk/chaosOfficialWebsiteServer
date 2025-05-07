@@ -166,6 +166,7 @@ npm install --production
 ```
 PORT=8888
 NODE_ENV=production
+TZ=Asia/Shanghai
 
 # MySQL数据库配置
 DB_HOST=localhost
@@ -276,6 +277,26 @@ sudo tail -f /var/log/nginx/error.log
 sudo tail -f /var/log/mysql/error.log
 ```
 
+### 时区配置
+
+为确保应用程序中的日期和时间正确显示，我们需要配置正确的时区：
+
+1. **Node.js 应用时区**
+   - 在 `.env` 文件中设置 `TZ=Asia/Shanghai`
+   - 在 PM2 配置中添加 `TZ: 'Asia/Shanghai'`
+
+2. **MySQL 时区**
+   - 在 MySQL 配置文件 (`/etc/mysql/my.cnf`) 中添加：
+     ```
+     [mysqld]
+     default-time-zone='+08:00'
+     ```
+   - 重启 MySQL 服务：`sudo systemctl restart mysql`
+
+3. **验证时区设置**
+   - 在 MySQL 中执行：`SELECT NOW();` 查看当前时间
+   - 确保返回的时间与本地时间一致
+
 ### 常见问题
 
 1. **无法连接到 MySQL**
@@ -291,6 +312,11 @@ sudo tail -f /var/log/mysql/error.log
 3. **防火墙问题**
    - 确保防火墙允许 8888 端口的流量
    - 使用 `sudo ufw allow 8888/tcp` 开放端口
+
+4. **时间显示不正确**
+   - 检查应用和数据库的时区配置
+   - 确保 MySQL 和 Node.js 应用使用相同的时区设置
+   - 重启应用和数据库服务
 
 ## 维护
 
