@@ -16,10 +16,12 @@ app.use(express.urlencoded({ extended: true }));
 // Import routes
 const contactRoutes = require('./routes/contactRoutes');
 const cooperationRoutes = require('./routes/cooperationRoutes');
+const adminRoutes = require('./routes/adminRoutes');
 
 // Use routes
 app.use('', contactRoutes);
 app.use('', cooperationRoutes);
+app.use('', adminRoutes);
 
 // 连接到MySQL数据库
 const { connectDB } = require('./config/db');
