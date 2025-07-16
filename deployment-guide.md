@@ -164,7 +164,7 @@ npm install --production
 确保 `.env` 文件已正确配置:
 
 ```
-PORT=8888
+PORT=30002
 NODE_ENV=production
 TZ=Asia/Shanghai
 
@@ -220,7 +220,7 @@ server {
     server_name 175.178.87.16;
 
     location /site/node {
-        proxy_pass http://localhost:8888;
+        proxy_pass http://localhost:30002;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -257,9 +257,9 @@ sudo certbot --nginx -d 175.178.87.16
 
 访问以下 URL 测试 API 是否正常工作：
 
-- https://175.178.87.16:8888/site/node
-- https://175.178.87.16:8888/site/node/contact/test
-- https://175.178.87.16:8888/site/node/cooperation/test
+- https://175.178.87.16:30002/site/node
+- https://175.178.87.16:30002/site/node/contact/test
+- https://175.178.87.16:30002/site/node/cooperation/test
 
 ## 故障排除
 
@@ -306,12 +306,12 @@ sudo tail -f /var/log/mysql/error.log
    - 确认数据库用户是否有正确的权限
 
 2. **端口被占用**
-   - 检查是否有其他服务占用了 8888 端口
-   - 使用 `sudo lsof -i :8888` 查看占用端口的进程
+   - 检查是否有其他服务占用了 30002 端口
+   - 使用 `sudo lsof -i :30002` 查看占用端口的进程
 
 3. **防火墙问题**
-   - 确保防火墙允许 8888 端口的流量
-   - 使用 `sudo ufw allow 8888/tcp` 开放端口
+   - 确保防火墙允许 30002 端口的流量
+   - 使用 `sudo ufw allow 30002/tcp` 开放端口
 
 4. **时间显示不正确**
    - 检查应用和数据库的时区配置

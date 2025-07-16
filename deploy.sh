@@ -84,6 +84,6 @@ fi
 
 echo "部署完成！"
 echo "你可以通过以下URL访问API:"
-echo "https://$SERVER_IP:8888/site/node"
-echo "https://$SERVER_IP:8888/site/node/contact/test"
-echo "https://$SERVER_IP:8888/site/node/cooperation/test"
+echo "https://$SERVER_IP:30002/site/node"
+echo "https://$SERVER_IP:30002/site/node/contact/test"
+echo "https://$SERVER_IP:30002/site/node/cooperation/test"

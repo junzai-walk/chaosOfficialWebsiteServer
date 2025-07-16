@@ -8,7 +8,7 @@ module.exports = {
     max_memory_restart: '200M',
     env: {
       NODE_ENV: 'production',
-      PORT: 8888,
+      PORT: 30002,
       DB_HOST: 'localhost',
       DB_PORT: 3306,
       DB_NAME: 'chaos_website',
