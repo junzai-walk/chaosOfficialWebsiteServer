@@ -23,6 +23,10 @@ app.use('', contactRoutes);
 app.use('', cooperationRoutes);
 app.use('', adminRoutes);
 
+// Add API prefix routes for production environment
+app.use('/api', contactRoutes);
+app.use('/api', cooperationRoutes);
+
 // 连接到MySQL数据库
 const { connectDB } = require('./config/db');
 connectDB();
